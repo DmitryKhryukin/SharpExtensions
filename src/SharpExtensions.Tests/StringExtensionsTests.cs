@@ -36,5 +36,22 @@ namespace SharpExtensions.Tests
                 content.RemoveTags().Should().Be("Kventin Tarantino");
             }
         }
+
+        public class CutContentMethod
+        {
+            [Test]
+            public void NullString_ReturnEmptyString()
+            {
+                string content = null;
+                content.CutContent(10, "").Should().Be(string.Empty);
+            }
+
+            [Test]
+            public void EmptyString_ReturnEmptyString()
+            {
+                string content = string.Empty;
+                content.CutContent(10, "").Should().Be(string.Empty);
+            }
+        }
     }
 }

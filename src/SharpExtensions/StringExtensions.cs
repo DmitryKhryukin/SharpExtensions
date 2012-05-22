@@ -10,6 +10,16 @@ namespace SharpExtensions
                 return Regex.Replace(content, "<[^>]*>", string.Empty);
 
             return string.Empty;
-        } 
+        }
+
+        public static string CutContent(this string content, int bound, string appendix = "")
+        {
+            if (string.IsNullOrEmpty(content))
+                return string.Empty;
+
+            return content;
+        }
+
+
     }
 }
