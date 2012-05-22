@@ -1,4 +1,5 @@
-﻿using System.Text.RegularExpressions;
+﻿using System;
+using System.Text.RegularExpressions;
 
 namespace SharpExtensions
 {
@@ -14,6 +15,9 @@ namespace SharpExtensions
 
         public static string CutContent(this string content, int bound, string appendix = "")
         {
+            if(bound < 0)
+                throw new ArgumentException("Bound should be positive");
+
             if (string.IsNullOrEmpty(content))
                 return string.Empty;
 

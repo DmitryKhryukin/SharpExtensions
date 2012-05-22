@@ -1,4 +1,5 @@
-﻿using NUnit.Framework;
+﻿using System;
+using NUnit.Framework;
 using FluentAssertions;
 
 namespace SharpExtensions.Tests
@@ -51,6 +52,14 @@ namespace SharpExtensions.Tests
             {
                 string content = string.Empty;
                 content.CutContent(10, "").Should().Be(string.Empty);
+            }
+
+            [Test]
+            [ExpectedException(typeof(ArgumentException), ExpectedMessage = "Bound should be positive")]
+            public void BoundIsNotPositive_ThrowExeption()
+            {
+                string content = "some string";
+                content.CutContent(-5);
             }
         }
     }
