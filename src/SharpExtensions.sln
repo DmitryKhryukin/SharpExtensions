@@ -1,7 +1,25 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 11.00
 # Visual Studio 2010
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SharpExtensions", "SharpExtensions\SharpExtensions.csproj", "{174C26A8-37E5-457D-A9BA-4B8D625E3BF7}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SharpExtensions.Tests", "SharpExtensions.Tests\SharpExtensions.Tests.csproj", "{A6750AD5-73E7-4416-BC55-1AAC142FEAC6}"
+EndProject
 Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{174C26A8-37E5-457D-A9BA-4B8D625E3BF7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{174C26A8-37E5-457D-A9BA-4B8D625E3BF7}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{174C26A8-37E5-457D-A9BA-4B8D625E3BF7}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{174C26A8-37E5-457D-A9BA-4B8D625E3BF7}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A6750AD5-73E7-4416-BC55-1AAC142FEAC6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A6750AD5-73E7-4416-BC55-1AAC142FEAC6}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A6750AD5-73E7-4416-BC55-1AAC142FEAC6}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A6750AD5-73E7-4416-BC55-1AAC142FEAC6}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
 	EndGlobalSection
