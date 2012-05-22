@@ -26,3 +26,6 @@ obj/
 *.sig
 _ReSharper*/
 *.orig
+
+#NuGet
+packages/
