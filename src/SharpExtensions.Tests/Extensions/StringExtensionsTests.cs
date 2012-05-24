@@ -76,6 +76,13 @@ namespace SharpExtensions.Tests.Extensions
                 string content = "some string";
                 content.CutContent(100, "...").Should().Be("some string");
             }
+
+            [Test]
+            public void NonApphanumericSimbols_ShoulpBeTrimmed()
+            {
+                string content = "some,  .: string";
+                content.CutContent(8, "...").Should().Be("some...");
+            }
         }
     }
 }

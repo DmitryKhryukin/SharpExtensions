@@ -27,32 +27,34 @@ namespace SharpExtensions.Extensions
                 return content;
             }
 
-            var result = new StringBuilder();
+            var stringBuilder = new StringBuilder();
            
             string firstPart = content.Substring(0, bound);
             string[] firstPartWords = firstPart.Split(' ');
 
             if (firstPartWords.Length == 1)
             {
-                result.Append(content);
+                stringBuilder.Append(content);
             }
             else if (firstPartWords.Length == 2)
             {
-                result.Append(firstPartWords[0]);
+                stringBuilder.Append(firstPartWords[0]);
             }
             else if (firstPartWords.Length > 2)
             {
-                result.Append(firstPartWords[0] + " ");
+                stringBuilder.Append(firstPartWords[0] + " ");
 
                 for (var i = 1; i < firstPartWords.Length - 2; i++)
-                    result.Append(firstPartWords[i] + " ");
+                    stringBuilder.Append(firstPartWords[i] + " ");
 
-                result.Append(firstPartWords[firstPartWords.Length - 2]);
+                stringBuilder.Append(firstPartWords[firstPartWords.Length - 2]);
             }
 
-            result.Append(appendix);
-           
-            return result.ToString();
+            var result = stringBuilder.ToString();
+
+            var badEndSimbols = new char[] {' ', '.', ',', ':'};
+
+            return string.Format("{0}{1}", result.Trim(badEndSimbols), appendix); 
         }
 
 
