@@ -1,4 +1,6 @@
-Sharp Extensions
+Sharp Extensions // C# extension methods
 ===============
 
-A couple of useful C# extensions.
+Just a couple of useful C# extensions.
+
+Types: enum, string... wil be more in the near future.
