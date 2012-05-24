@@ -67,14 +67,14 @@ namespace SharpExtensions.Tests.Extensions
             public void ContentMoreThanBound_AppendixIsAddedToTheEndOfResult()
             {
                 string content = "some string";
-                content.CutContent(5, "...").Should().EndWith("...");
+                content.CutContent(5, "...").Should().Be("some..."); ;
             }
 
             [Test]
-            public void ContentLessThanBound_AppendixIsNotAddedToTheEndOfResult()
+            public void ContentLessThanBound__ReturnAsIs()
             {
                 string content = "some string";
-                content.CutContent(5, "...").Should().Be("some...");
+                content.CutContent(100, "...").Should().Be("some string");
             }
         }
     }

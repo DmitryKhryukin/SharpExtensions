@@ -22,38 +22,36 @@ namespace SharpExtensions.Extensions
             if (string.IsNullOrEmpty(content))
                 return string.Empty;
 
-            var result = new StringBuilder();
-
             if (content.Length <= bound)
+            {
+                return content;
+            }
+
+            var result = new StringBuilder();
+           
+            string firstPart = content.Substring(0, bound);
+            string[] firstPartWords = firstPart.Split(' ');
+
+            if (firstPartWords.Length == 1)
             {
                 result.Append(content);
             }
-            else
+            else if (firstPartWords.Length == 2)
             {
-                string firstPart = content.Substring(0, bound);
-                string[] firstPartWords = firstPart.Split(' ');
+                result.Append(firstPartWords[0]);
+            }
+            else if (firstPartWords.Length > 2)
+            {
+                result.Append(firstPartWords[0] + " ");
 
-                if (firstPartWords.Length == 1)
-                {
-                    result.Append(content);
-                }
-                else if (firstPartWords.Length == 2)
-                {
-                    result.Append(firstPartWords[0]);
-                }
-                else if (firstPartWords.Length > 2)
-                {
-                    result.Append(firstPartWords[0] + " ");
+                for (var i = 1; i < firstPartWords.Length - 2; i++)
+                    result.Append(firstPartWords[i] + " ");
 
-                    for (var i = 1; i < firstPartWords.Length - 2; i++)
-                        result.Append(firstPartWords[i] + " ");
-
-                    result.Append(firstPartWords[firstPartWords.Length - 2]);
-                }
-
-                result.Append(appendix);
+                result.Append(firstPartWords[firstPartWords.Length - 2]);
             }
 
+            result.Append(appendix);
+           
             return result.ToString();
         }
 
