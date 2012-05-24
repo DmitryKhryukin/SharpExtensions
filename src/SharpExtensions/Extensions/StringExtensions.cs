@@ -54,7 +54,7 @@ namespace SharpExtensions.Extensions
 
             var badEndSimbols = new char[] {' ', '.', ',', ':'};
 
-            return string.Format("{0}{1}", result.Trim(badEndSimbols), appendix); 
+            return string.Format("{0}{1}", result.TrimEnd(badEndSimbols), appendix); 
         }
 
 
