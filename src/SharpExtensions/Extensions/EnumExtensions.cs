@@ -1,7 +1,7 @@
 ﻿using System;
 using System.ComponentModel;
 
-namespace SharpExtensions
+namespace SharpExtensions.Extensions
 {
     public static class EnumExtensions
     {

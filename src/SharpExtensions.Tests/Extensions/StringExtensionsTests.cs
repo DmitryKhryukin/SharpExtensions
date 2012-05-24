@@ -1,7 +1,8 @@
 ﻿using NUnit.Framework;
 using FluentAssertions;
+using SharpExtensions.Extensions;
 
-namespace SharpExtensions.Tests
+namespace SharpExtensions.Tests.Extensions
 {
     [TestFixture]
     public class StringExtensionsTests
