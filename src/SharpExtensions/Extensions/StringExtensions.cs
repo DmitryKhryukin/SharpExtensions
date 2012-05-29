@@ -57,6 +57,14 @@ namespace SharpExtensions.Extensions
             return string.Format("{0}{1}", result.TrimEnd(badEndSimbols), appendix); 
         }
 
+        public static string Reverse(this string input)
+        {
+            if (string.IsNullOrWhiteSpace(input))
+                return input;
 
+            char[] charArray = input.ToCharArray();
+            Array.Reverse(charArray);
+            return new string(charArray);
+        }
     }
 }

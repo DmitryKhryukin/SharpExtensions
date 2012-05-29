@@ -84,5 +84,29 @@ namespace SharpExtensions.Tests.Extensions
                 content.CutContent(8, "...").Should().Be("some...");
             }
         }
+
+        public class ReverseMethod
+        {
+            [Test]
+            public void NullString_ReturnNull()
+            {
+                string input = null;
+                input.Reverse().Should().Be(null);
+            }
+
+            [Test]
+            public void EmptyString_ReturnEmpty()
+            {
+                string input = "";
+                input.Reverse().Should().Be("");
+            }
+
+            [Test]
+            public void ReverseString()
+            {
+                string input = "abcd efg?!";
+                input.Reverse().Should().Be("!?gfe dcba");
+            }
+        }
     }
 }
