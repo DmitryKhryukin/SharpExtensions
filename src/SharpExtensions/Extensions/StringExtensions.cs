@@ -51,8 +51,10 @@ namespace SharpExtensions.Extensions
                 stringBuilder.Append(firstPartWords[0] + " ");
 
                 for (var i = 1; i < firstPartWords.Length - 2; i++)
+                {
                     stringBuilder.Append(firstPartWords[i] + " ");
-
+                }
+                
                 stringBuilder.Append(firstPartWords[firstPartWords.Length - 2]);
             }
 
