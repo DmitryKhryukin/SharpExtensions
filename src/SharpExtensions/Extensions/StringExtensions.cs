@@ -9,7 +9,9 @@ namespace SharpExtensions.Extensions
         public static string RemoveTags(this string content)
         {
             if (!string.IsNullOrWhiteSpace(content))
+            {
                 return Regex.Replace(content, "<[^>]*>", string.Empty);
+            }
 
             return string.Empty;
         }
@@ -17,10 +19,14 @@ namespace SharpExtensions.Extensions
         public static string CutContent(this string content, int bound, string appendix = "")
         {
             if(bound < 0)
+            {
                 throw new ArgumentException("Bound should be positive");
+            }
 
             if (string.IsNullOrEmpty(content))
+            {
                 return string.Empty;
+            }
 
             if (content.Length <= bound)
             {
@@ -60,10 +66,13 @@ namespace SharpExtensions.Extensions
         public static string Reverse(this string input)
         {
             if (string.IsNullOrWhiteSpace(input))
+            {
                 return input;
-
+            }
+            
             char[] charArray = input.ToCharArray();
             Array.Reverse(charArray);
+
             return new string(charArray);
         }
     }
