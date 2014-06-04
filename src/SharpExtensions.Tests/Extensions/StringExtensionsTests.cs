@@ -34,8 +34,8 @@ namespace SharpExtensions.Tests.Extensions
             [Test]
             public void StringWithTags_RemoveTags()
             {
-                string content = "<b>Kventin</b> Tarantino";
-                content.RemoveTags().Should().Be("Kventin Tarantino");
+                string content = "<b>Quentin</b> Tarantino";
+                content.RemoveTags().Should().Be("Quentin Tarantino");
             }
         }
 
